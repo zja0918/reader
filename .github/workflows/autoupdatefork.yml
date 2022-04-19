@@ -24,6 +24,7 @@ jobs:
         git config --global user.name "github-actions"
     - name: Update fork
       run: |
+        git pull origin master
         git remote add upstream https://github.com/gedoor/legado.git
         git remote -v
         git fetch upstream
