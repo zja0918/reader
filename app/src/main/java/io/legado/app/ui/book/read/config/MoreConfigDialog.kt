@@ -9,7 +9,6 @@ import android.widget.LinearLayout
 import androidx.fragment.app.DialogFragment
 import androidx.preference.Preference
 import io.legado.app.R
-import io.legado.app.base.BasePreferenceFragment
 import io.legado.app.constant.EventBus
 import io.legado.app.constant.PreferKey
 import io.legado.app.help.config.ReadBookConfig
@@ -18,6 +17,7 @@ import io.legado.app.lib.theme.primaryColor
 import io.legado.app.model.ReadBook
 import io.legado.app.ui.book.read.ReadBookActivity
 import io.legado.app.ui.book.read.page.provider.ChapterProvider
+import io.legado.app.ui.widget.prefs.fragment.PreferenceFragment
 import io.legado.app.utils.dpToPx
 import io.legado.app.utils.getPrefBoolean
 import io.legado.app.utils.postEvent
@@ -67,7 +67,7 @@ class MoreConfigDialog : DialogFragment() {
         (activity as ReadBookActivity).bottomDialog--
     }
 
-    class ReadPreferenceFragment : BasePreferenceFragment(),
+    class ReadPreferenceFragment : PreferenceFragment(),
         SharedPreferences.OnSharedPreferenceChangeListener {
 
         @SuppressLint("RestrictedApi")

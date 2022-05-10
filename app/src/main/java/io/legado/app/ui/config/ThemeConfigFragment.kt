@@ -13,7 +13,6 @@ import android.widget.SeekBar
 import androidx.preference.Preference
 import io.legado.app.R
 import io.legado.app.base.AppContextWrapper
-import io.legado.app.base.BasePreferenceFragment
 import io.legado.app.constant.AppConst
 import io.legado.app.constant.EventBus
 import io.legado.app.constant.PreferKey
@@ -27,13 +26,14 @@ import io.legado.app.lib.dialogs.selector
 import io.legado.app.lib.theme.primaryColor
 import io.legado.app.ui.widget.number.NumberPickerDialog
 import io.legado.app.ui.widget.prefs.ColorPreference
+import io.legado.app.ui.widget.prefs.fragment.PreferenceFragment
 import io.legado.app.ui.widget.seekbar.SeekBarChangeListener
 import io.legado.app.utils.*
 import java.io.FileOutputStream
 
 
 @Suppress("SameParameterValue")
-class ThemeConfigFragment : BasePreferenceFragment(),
+class ThemeConfigFragment : PreferenceFragment(),
     SharedPreferences.OnSharedPreferenceChangeListener {
 
     private val requestCodeBgLight = 121

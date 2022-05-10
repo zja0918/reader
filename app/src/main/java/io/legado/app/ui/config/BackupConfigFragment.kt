@@ -15,7 +15,6 @@ import androidx.preference.EditTextPreference
 import androidx.preference.ListPreference
 import androidx.preference.Preference
 import io.legado.app.R
-import io.legado.app.base.BasePreferenceFragment
 import io.legado.app.constant.AppLog
 import io.legado.app.constant.PreferKey
 import io.legado.app.help.config.AppConfig
@@ -29,12 +28,13 @@ import io.legado.app.lib.theme.accentColor
 import io.legado.app.lib.theme.primaryColor
 import io.legado.app.ui.document.HandleFileContract
 import io.legado.app.ui.widget.dialog.TextDialog
+import io.legado.app.ui.widget.prefs.fragment.PreferenceFragment
 import io.legado.app.utils.*
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
 import splitties.init.appCtx
 
-class BackupConfigFragment : BasePreferenceFragment(),
+class BackupConfigFragment : PreferenceFragment(),
     SharedPreferences.OnSharedPreferenceChangeListener {
 
     private val viewModel by activityViewModels<ConfigViewModel>()
