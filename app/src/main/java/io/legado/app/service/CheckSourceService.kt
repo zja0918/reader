@@ -72,6 +72,7 @@ class CheckSourceService : BaseService() {
             IntentAction.start -> intent.getStringArrayListExtra("selectIds")?.let {
                 check(it)
             }
+
             IntentAction.resume -> upNotification()
             else -> stopSelf()
         }
@@ -154,8 +155,8 @@ class CheckSourceService : BaseService() {
                 }
             }
             //校验发现书籍
-            if (CheckSource.checkDiscovery) {
-                val exs = source.exploreKinds
+            if (CheckSource.checkDiscovery && !source.exploreUrl.isNullOrBlank()) {
+                val exs = source.exploreKinds()
                 var url: String? = null
                 for (ex in exs) {
                     url = ex.url
